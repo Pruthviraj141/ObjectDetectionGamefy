@@ -7,14 +7,12 @@ Werkzeug==3.0.1
 
 # Computer Vision and Machine Learning
 opencv-python==4.8.1.78
-torch==2.1.1+cpu
-torchvision==0.16.1+cpu
+torch
+torchvision
+torchaudio
 ultralytics==8.0.196
 
-# Note: Using CPU-only versions for Render compatibility
-# For GPU acceleration, replace with:
-# torch==2.1.1
-# torchvision==0.16.1
+
 
 # Numerical Computing
 numpy==1.24.3
