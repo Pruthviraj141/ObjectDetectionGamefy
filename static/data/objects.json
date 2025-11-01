@@ -1,0 +1,191 @@
+{
+  "chair": {
+    "displayName": "Chair",
+    "desc": "A chair is used for sitting. It helps people sit comfortably while reading, eating, or studying.",
+    "vocab": ["seat", "stool", "armchair"],
+    "combines": ["Chair + Table → Study Table", "Chair + Dining Table → Dining Area"],
+    "model": "/static/models/chair.glb",
+    "image": "/static/icons/chair.png"
+  },
+  "mobile phone": {
+    "displayName": "Mobile Phone",
+    "desc": "A mobile phone helps us call and message people and learn new things on the internet.",
+    "vocab": ["cellphone", "smartphone", "handset"],
+    "combines": ["Phone + Charger → Charging", "Phone + Earphones → Listen to music"],
+    "model": "/static/models/mobile.glb",
+    "image": "/static/icons/phone.png"
+  },
+  "bottle": {
+    "displayName": "Bottle",
+    "desc": "A bottle is used to carry water or juice on the go.",
+    "vocab": ["flask", "container", "jug"],
+    "combines": ["Bottle + Cup → Drink", "Bottle + Bag → Travel Kit"],
+    "model": "/static/models/bottle.glb",
+    "image": "/static/icons/bottle.png"
+  },
+  "person": {
+    "displayName": "Person",
+    "desc": "A person is a human being. People can walk, run, think, and learn new things every day.",
+    "vocab": ["human", "kid", "adult"],
+    "combines": ["Person + Phone → Communication", "Person + Chair → Sitting"],
+    "model": "/static/models/person.glb",
+    "image": "/static/icons/person.png"
+  },
+  "cat": {
+    "displayName": "Cat",
+    "desc": "A cat is a pet animal that is soft, fluffy, and loves to play and sleep.",
+    "vocab": ["kitten", "pet", "feline"],
+    "combines": ["Cat + Food Bowl → Eating", "Cat + Toy → Playing"],
+    "model": "/static/models/cat.glb",
+    "image": "/static/icons/cat.png"
+  },
+    "laptop": {
+    "displayName": "Laptop",
+    "desc": "A laptop is a portable computer used for work, study, and entertainment anywhere.",
+    "vocab": ["notebook", "computer", "PC"],
+    "combines": ["Laptop + Keyboard → Typing", "Laptop + Charger → Charging"],
+    "model": "/static/models/laptop.glb",
+    "image": "/static/icons/laptop.png"
+  },
+  "keyboard": {
+    "displayName": "Keyboard",
+    "desc": "A keyboard is an input device used to type letters, numbers, and symbols into a computer.",
+    "vocab": ["keys", "input device", "typing board"],
+    "combines": ["Keyboard + Laptop → Typing", "Keyboard + Mouse → Computer Setup"],
+    "model": "/static/models/keyboard.glb",
+    "image": "/static/icons/keyboard.png"
+  },
+    "banana": {
+    "displayName": "Banana",
+    "desc": "A banana is a yellow fruit that gives instant energy and is fun to eat.",
+    "vocab": ["fruit", "snack", "yellow fruit"],
+    "combines": ["Banana + Basket → Fruit Collection", "Banana + Monkey → Snack Time"],
+    "model": "/static/models/banana.glb",
+    "image": "/static/icons/banana.png"
+  },
+  "bed": {
+    "displayName": "Bed",
+    "desc": "A bed is used for resting and sleeping comfortably.",
+    "vocab": ["cot", "bunk", "mattress"],
+    "combines": ["Bed + Pillow → Sleep", "Bed + Blanket → Cozy Night"],
+    "model": "/static/models/bed.glb",
+    "image": "/static/icons/bed.png"
+  },
+
+  "dog": {
+    "displayName": "Dog",
+    "desc": "A dog is a friendly pet that loves to play, fetch, and protect your home.",
+    "vocab": ["puppy", "hound", "canine"],
+    "combines": ["Dog + Leash → Walking", "Dog + Food Bowl → Eating"],
+    "model": "/static/models/default.glb",
+    "image": "/static/icons/dog.png"
+  },
+  "book": {
+    "displayName": "Book",
+    "desc": "A book has many pages with words and pictures to help us learn and tell stories.",
+    "vocab": ["storybook", "novel", "textbook"],
+    "combines": ["Book + Person → Reading", "Book + Table → Study Area"],
+    "model": "/static/models/default.glb",
+    "image": "/static/icons/book.png"
+  },
+  "apple": {
+    "displayName": "Apple",
+    "desc": "An apple is a healthy fruit that is red, green, or yellow and tastes sweet and crunchy.",
+    "vocab": ["fruit", "snack", "crunch"],
+    "combines": ["Apple + Plate → Snack Time", "Apple + Person → Healthy Eating"],
+    "model": "/static/models/default.glb",
+    "image": "/static/icons/apple.png"
+  },
+    "bicycle": {
+    "displayName": "Bicycle",
+    "desc": "A two-wheeled vehicle powered by pedaling.",
+    "vocab": ["bike", "cycle", "two-wheeler"],
+    "combines": ["Bicycle + Helmet → Safe Ride"],
+    "model": "/static/models/bicycle.glb"
+  },
+  "car": {
+    "displayName": "Car",
+    "desc": "A car is a vehicle that helps people travel from one place to another.",
+    "vocab": ["automobile", "vehicle", "auto"],
+    "combines": ["Car + Garage → Parking", "Car + Gas → Fuel"],
+    "model": "/static/models/car.glb"
+  },
+  "motorcycle": {
+    "displayName": "Motorcycle",
+    "desc": "A two-wheeled motor vehicle used for quick travel.",
+    "vocab": ["bike", "motorbike", "scooter"],
+    "combines": ["Motorcycle + Helmet → Safety"],
+    "model": "/static/models/motorcycle.glb"
+  },
+  "airplane": {
+    "displayName": "Airplane",
+    "desc": "A powered flying vehicle with wings and engines.",
+    "vocab": ["plane", "jet", "aircraft"],
+    "combines": ["Airplane + Airport → Flight"],
+    "model": "/static/models/airplane.glb"
+  },
+  "bus": {
+    "displayName": "Bus",
+    "desc": "A large vehicle designed to carry many passengers.",
+    "vocab": ["coach", "shuttle", "minibus"],
+    "combines": ["Bus + Station → Commute"],
+    "model": "/static/models/bus.glb"
+  },
+  "train": {
+    "displayName": "Train",
+    "desc": "A series of connected vehicles that run on rails.",
+    "vocab": ["locomotive", "subway", "metro"],
+    "combines": ["Train + Station → Journey"],
+    "model": "/static/models/train.glb"
+  },
+  "truck": {
+    "displayName": "Truck",
+    "desc": "A vehicle used to transport goods and materials.",
+    "vocab": ["lorry", "pickup", "hauler"],
+    "combines": ["Truck + Cargo → Delivery"],
+    "model": "/static/models/truck.glb"
+  },
+  "boat": {
+    "displayName": "Boat",
+    "desc": "A small vessel used to travel on water.",
+    "vocab": ["ship", "vessel", "yacht"],
+    "combines": ["Boat + Water → Sailing"],
+    "model": "/static/models/boat.glb"
+  },
+  "traffic light": {
+    "displayName": "Traffic Light",
+    "desc": "A signaling device positioned at road intersections.",
+    "vocab": ["stoplight", "signal", "red light"],
+    "combines": ["Traffic Light + Car → Intersection"],
+    "model": "/static/models/traffic_light.glb"
+  },
+  "fire hydrant": {
+    "displayName": "Fire Hydrant",
+    "desc": "A water outlet used by firefighters during emergencies.",
+    "vocab": ["hydrant", "fire plug"],
+    "combines": ["Fire Hydrant + Fire Truck → Rescue"],
+    "model": "/static/models/fire_hydrant.glb"
+  },
+  "stop sign": {
+    "displayName": "Stop Sign",
+    "desc": "A red sign indicating that vehicles must come to a complete stop.",
+    "vocab": ["sign", "traffic sign"],
+    "combines": ["Stop Sign + Car → Stop"],
+    "model": "/static/models/stop_sign.glb"
+  },
+  "cow": {
+    "displayName": "Cow",
+    "desc": "A large animal raised for milk, meat, or labor.",
+    "vocab": ["cattle", "ox", "bull"],
+    "combines": ["Cow + Farm → Dairy"],
+    "model": "/static/models/cow.glb"
+  },
+  "elephant": {
+    "displayName": "Elephant",
+    "desc": "A large mammal known for its trunk and tusks.",
+    "vocab": ["pachyderm", "mammal", "animal"],
+    "combines": ["Elephant + Jungle → Safari"],
+    "model": "/static/models/elephant.glb"
+  }
+
+}

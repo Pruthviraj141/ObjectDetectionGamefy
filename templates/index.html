@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Object Quest - Learn & Earn!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.125.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.125.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.125.2/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Confetti Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-gradient-to-br from-sky-200 via-yellow-100 to-pink-200 min-h-screen overflow-hidden">
+    
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="fixed inset-0 bg-gradient-to-br from-purple-400 via-pink-400 to-red-400 flex items-center justify-center z-50 transition-all duration-1000">
+        <div class="text-center p-8 bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 max-w-md w-full mx-4 animate-pulse">
+            <div class="text-6xl mb-6 animate-bounce">👋</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                Welcome to Object Quest!
+            </h1>
+            <p class="text-lg md:text-xl text-white/90 mb-8 font-medium">
+                Discover amazing 3D objects and earn points while learning!
+            </p>
+            
+            <div class="mb-6">
+                <input 
+                    type="text" 
+                    id="player-name" 
+                    placeholder="Enter your name to start learning & earning points!" 
+                    class="w-full p-4 text-lg rounded-2xl border-none outline-none text-center font-semibold text-gray-700 shadow-lg"
+                    maxlength="20"
+                >
+            </div>
+            
+            <button 
+                id="start-game-btn" 
+                class="w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white text-xl font-bold py-4 px-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-200"
+            >
+                🚀 Start Game
+            </button>
+            
+            <p class="text-white/70 text-sm mt-4">
+                Point Quest • Learn Together • Have Fun!
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Game Interface -->
+    <div id="game-interface" class="hidden">
+        <!-- Top Navigation Bar -->
+        <nav class="bg-white/90 backdrop-blur-lg shadow-lg border-b-4 border-yellow-300 p-4">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl">🎮</div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-purple-600">Object Quest</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Player Score Badge -->
+                    <div id="score-badge" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-full shadow-lg">
+                        <span class="font-bold">🏅 Player: <span id="player-name-display">Player</span> | Score: <span id="current-score">0</span></span>
+                    </div>
+                    
+                    <!-- Camera Control Button -->
+                    <button
+                        id="camera-toggle-btn"
+                        class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 font-bold"
+                        title="Start or stop camera"
+                    >
+                        📹 Start Camera
+                    </button>
+                    
+                    <!-- Leaderboard Button -->
+                    <button
+                        id="leaderboard-btn"
+                        class="bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 font-bold"
+                    >
+                        🏆 Leaderboard
+                    </button>
+                    
+                    <!-- Logout Button -->
+                    <button
+                        id="logout-btn"
+                        class="bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 text-white px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 font-bold"
+                        title="Logout and return to welcome screen"
+                    >
+                        🚪 Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="max-w-7xl mx-auto p-4 space-y-6">
+            
+            <!-- Camera Detection Section -->
+            <div id="video-container" class="hidden relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50">
+                <video id="video" autoplay playsinline muted class="w-full h-auto"></video>
+                <canvas id="overlay" class="absolute top-0 left-0 pointer-events-none"></canvas>
+                
+                <!-- Detection Status -->
+                <div id="detection-status" class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg">
+                    <span id="detection-status-text" class="text-lg font-bold text-purple-600">📷 Camera Active - Ready to Detect!</span>
+                </div>
+                
+                <!-- Test Detection Button (for debugging) -->
+                <div id="test-detection" class="absolute top-4 right-4">
+                    <button
+                        id="test-detect-btn"
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold shadow-lg transform hover:scale-105 transition-all"
+                        title="Test backend detection"
+                    >
+                        🧪 Test Detection
+                    </button>
+                </div>
+            </div>
+
+            <!-- Object Cards Grid Section -->
+            <section>
+                <h2 class="text-3xl font-bold text-center text-purple-600 mb-6 flex items-center justify-center space-x-2">
+                    <span>🎯</span>
+                    <span>Discovered Objects</span>
+                    <span>🎯</span>
+                </h2>
+                <div id="models-container" class="models-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboard-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-yellow-300 max-w-2xl w-full max-h-[80vh] overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-400 to-pink-400 p-6">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-3xl font-bold text-white flex items-center space-x-2">
+                        <span>🏆</span>
+                        <span>Leaderboard</span>
+                    </h2>
+                    <button id="close-leaderboard" class="text-white hover:text-yellow-200 text-2xl font-bold w-10 h-10 rounded-full hover:bg-white/20 transition-all">
+                        ✕
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <div id="leaderboard-content" class="space-y-3">
+                    <!-- Leaderboard items will be populated by JavaScript -->
+                </div>
+                
+                <div class="mt-6 text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container" class="fixed inset-0 pointer-events-none z-40"></div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

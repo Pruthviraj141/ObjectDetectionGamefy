@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Management Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dataset Management Dashboard</h1>
+        <a href="/" class="back-link">← Back to Detection</a>
+        <div class="dataset-info">
+            <p>Total samples: <span id="total-samples">{{ data|length }}</span></p>
+            <button id="export-button">Export Dataset</button>
+        </div>
+        <div class="samples-grid" id="samples-grid">
+            {% for sample in data %}
+            <div class="sample-card">
+                <img src="/training_data/images/{{ sample.image }}" alt="Sample image">
+                <div class="sample-info">
+                    <p><strong>Timestamp:</strong> {{ sample.timestamp }}</p>
+                    <button class="delete-button" data-timestamp="{{ sample.timestamp }}">Delete</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

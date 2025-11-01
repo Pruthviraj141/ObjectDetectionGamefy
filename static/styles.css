@@ -1,0 +1,921 @@
+/* 🎮 Object Quest - Kid-Friendly Game Styles */
+/* Colorful, fun, and engaging design for children */
+
+/* Global Game Styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+/* Enable smooth scrolling for mobile */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Remove overflow hidden that was blocking scrolling */
+.bg-gradient-to-br {
+    overflow: visible !important;
+}
+
+/* Object Cards Grid - Enhanced for Gaming */
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 40px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual Object Card - Gaming Theme */
+.object-card {
+    width: 380px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    border-radius: 24px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.object-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 27px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+    z-index: -1;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+}
+
+.object-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* 3D Viewer Container - Enhanced */
+.viewer-box {
+    width: 100%;
+    height: 340px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+    box-shadow: inset 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Remove Button - Gaming Style */
+.remove-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.remove-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+}
+
+/* Loading Spinner - Fun Gaming Style */
+.loading-spinner {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 20px;
+}
+
+.loading-spinner div {
+    animation: spin-slow 2s linear infinite;
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Object Name - Enhanced Typography */
+.object-name {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin: 12px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Description Text */
+.object-desc {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+/* Vocabulary Section - Highlighted */
+.vocab-section {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    border: 2px solid #fdcb6e;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 4px 15px rgba(253, 203, 110, 0.3);
+}
+
+.vocab-section h4 {
+    color: #e17055;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vocab-list {
+    color: #d63031;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Combination Section */
+.combines-section {
+    background: linear-gradient(135deg, #dda0dd 0%, #e6b3ff 100%);
+    border: 2px solid #da77f2;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 12px 0;
+    box-shadow: 0 4px 15px rgba(218, 119, 242, 0.3);
+}
+
+.combines-section h4 {
+    color: #6c5ce7;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.combines-list {
+    color: #5f3dc4;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Speak Button - Enhanced Gaming Style */
+.speak-btn {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+    margin-top: 16px;
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.speak-btn:hover {
+    background: linear-gradient(135deg, #00a085 0%, #00b7ba 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 184, 148, 0.6);
+}
+
+.speak-btn:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.speak-btn:disabled {
+    background: linear-gradient(135deg, #b2bec3 0%, #636e72 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Score Badge - Gaming Style */
+#score-badge {
+    background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px rgba(253, 203, 110, 0.4);
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { 
+        box-shadow: 0 6px 20px rgba(253, 203, 110, 0.4); 
+    }
+    50% { 
+        box-shadow: 0 6px 25px rgba(253, 203, 110, 0.7); 
+    }
+}
+
+/* Leaderboard Button */
+#leaderboard-btn {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#leaderboard-btn:hover {
+    background: linear-gradient(135deg, #8e7cc3 0%, #5f4fc5 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.6);
+}
+
+/* Logout Button - Enhanced Styling */
+#logout-btn {
+    background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(214, 48, 49, 0.4);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#logout-btn:hover {
+    background: linear-gradient(135deg, #e55039 0%, #b52e3a 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(214, 48, 49, 0.6);
+}
+
+/* Modal Styling */
+#leaderboard-modal {
+    backdrop-filter: blur(10px);
+}
+
+#leaderboard-modal > div {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    border: 4px solid #fdcb6e;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* Welcome Screen Enhancements */
+#welcome-screen {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#welcome-screen > div {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Welcome Screen Input */
+#player-name {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    border: 3px solid #a29bfe;
+    border-radius: 16px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#player-name:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3);
+    transform: scale(1.02);
+}
+
+/* Start Game Button */
+#start-game-btn {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+}
+
+#start-game-btn:hover {
+    background: linear-gradient(135deg, #00a085 0%, #00b7ba 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 184, 148, 0.6);
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,255,0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 4px solid #fdcb6e;
+    position: relative;
+    z-index: 100;
+}
+
+/* Navigation Flex Container */
+nav .max-w-7xl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+nav .flex.items-center.space-x-4 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+nav h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Detection Status */
+#detection-status {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,255,0.9) 100%);
+    border: 2px solid #00b894;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+
+#detection-status span {
+    color: #00b894;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Video Container Enhancement */
+#video-container {
+    border: 4px solid rgba(255,255,255,0.6);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+/* Floating Points Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Enhanced Mobile Experience - Optimized for Touch */
+@media (max-width: 768px) {
+    /* Improved body and font sizes for mobile */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* Enhanced navigation for better mobile layout */
+    nav {
+        position: relative;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 3px solid #fdcb6e;
+    }
+    
+    nav .max-w-7xl {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    nav .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    nav .flex.items-center.space-x-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    nav h1 {
+        font-size: 22px;
+        text-align: center;
+        margin: 0 0 8px 0;
+        color: #667eea;
+        font-weight: bold;
+    }
+    
+    /* Better button sizing for mobile touch */
+    #score-badge, #leaderboard-btn, #logout-btn {
+        position: static;
+        font-size: 14px;
+        padding: 12px 20px;
+        margin: 4px;
+        min-width: 140px;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    #score-badge:active, #leaderboard-btn:active, #logout-btn:active {
+        transform: scale(0.98);
+    }
+    
+    /* Improved main content area */
+    main {
+        padding: 16px;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .max-w-7xl {
+        padding: 0;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    /* Enhanced object cards for mobile */
+    .object-card {
+        width: 100%;
+        max-width: 360px;
+        padding: 20px;
+        margin: 0 auto 24px auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+        border: 2px solid rgba(255,255,255,0.8);
+    }
+    
+    .viewer-box {
+        height: 300px;
+        margin-bottom: 18px;
+        border-radius: 16px;
+        border: 3px solid rgba(255,255,255,0.6);
+    }
+    
+    .object-name {
+        font-size: 22px;
+        text-align: center;
+        margin: 16px 0;
+        font-weight: bold;
+    }
+    
+    .object-desc {
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+    
+    /* Enhanced vocabulary and combines sections */
+    .vocab-section, .combines-section {
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 14px;
+        border: 2px solid;
+    }
+    
+    .vocab-section h4, .combines-section h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .vocab-list, .combines-list {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* Improved speak button for touch */
+    .speak-btn {
+        font-size: 16px;
+        padding: 16px 20px;
+        margin-top: 18px;
+        border-radius: 18px;
+        min-height: 50px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .speak-btn:active {
+        transform: translateY(1px) scale(0.99);
+    }
+    
+    /* Enhanced models grid for mobile */
+    .models-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+        padding: 24px 8px 80px 8px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    /* Better video container for mobile */
+    #video-container {
+        margin: 16px auto;
+        max-width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 4px solid rgba(255,255,255,0.6);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* Enhanced welcome screen for mobile */
+    #welcome-screen {
+        padding: 20px;
+    }
+    
+    #welcome-screen > div {
+        margin: 0 12px;
+        padding: 24px;
+        border-radius: 20px;
+        max-width: none;
+    }
+    
+    #welcome-screen h1 {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+    
+    #welcome-screen p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    #player-name {
+        font-size: 16px;
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    #start-game-btn {
+        font-size: 18px;
+        padding: 18px 24px;
+        margin-top: 20px;
+        min-width: 200px;
+        border-radius: 20px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    #start-game-btn:active {
+        transform: translateY(1px) scale(0.99);
+    }
+    
+    /* Enhanced detection status */
+    #detection-status {
+        position: static;
+        margin: 12px;
+        padding: 12px 16px;
+        border-radius: 16px;
+        font-size: 15px;
+    }
+    
+    /* Better modal handling for mobile */
+    #leaderboard-modal > div {
+        margin: 16px;
+        max-height: 85vh;
+        overflow-y: auto;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    /* Enhanced remove button for touch */
+    .remove-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .remove-btn:active {
+        transform: scale(0.95);
+    }
+    
+    /* Better scroll indicators */
+    main {
+        scroll-behavior: smooth;
+    }
+}
+
+@media (max-width: 480px) {
+    .object-card {
+        width: 280px;
+        padding: 12px;
+        margin: 0 auto 20px auto;
+    }
+    
+    .viewer-box {
+        height: 240px;
+    }
+    
+    .object-name {
+        font-size: 18px;
+    }
+    
+    .object-desc {
+        font-size: 13px;
+    }
+    
+    /* Mobile navigation fixes */
+    nav {
+        position: relative !important;
+        padding: 8px;
+    }
+    
+    nav .max-w-7xl {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    nav .flex {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+    }
+    
+    nav .flex.items-center.space-x-4 {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    nav h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    /* Prevent UI overlap on mobile */
+    #score-badge, #leaderboard-btn, #logout-btn {
+        position: static !important;
+        margin: 4px;
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    main {
+        padding-top: 10px;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Fixed models grid spacing for mobile */
+    .models-grid {
+        gap: 16px;
+        padding: 20px 8px 60px 8px;
+        margin-top: 20px;
+    }
+    
+    .object-card {
+        margin: 0 auto 20px auto;
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    #welcome-screen {
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Ensure modals are above everything */
+    #leaderboard-modal {
+        z-index: 9999;
+    }
+    
+    /* Improve touch scrolling behavior */
+    * {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .object-card, .speak-btn, .remove-btn {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .object-card {
+        width: 420px;
+    }
+    
+    .viewer-box {
+        height: 380px;
+    }
+    
+    .object-name {
+        font-size: 28px;
+    }
+    
+    .object-desc {
+        font-size: 18px;
+    }
+    
+    #score-badge {
+        font-size: 18px;
+        padding: 14px 24px;
+    }
+    
+    #leaderboard-btn {
+        font-size: 18px;
+        padding: 14px 28px;
+    }
+}
+
+/* Fun animations for engagement */
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.object-card {
+    animation: bounce-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Glow effects for interactive elements */
+.speak-btn:focus,
+#start-game-btn:focus,
+#leaderboard-btn:focus,
+#logout-btn:focus {
+    outline: 3px solid #fdcb6e;
+    outline-offset: 3px;
+}
+
+/* Z-index hierarchy to prevent overlaps */
+#leaderboard-modal {
+    z-index: 9999 !important;
+}
+
+#leaderboard-modal > div {
+    z-index: 10000;
+    position: relative;
+}
+
+#welcome-screen {
+    z-index: 5000;
+}
+
+nav {
+    z-index: 100;
+    position: relative;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure buttons don't overlap on desktop */
+@media (min-width: 769px) {
+    nav .flex.items-center.space-x-4 {
+        gap: 12px;
+    }
+    
+    #score-badge {
+        white-space: nowrap;
+        max-width: none;
+    }
+    
+    #leaderboard-btn {
+        white-space: nowrap;
+        max-width: none;
+    }
+    
+    #logout-btn {
+        white-space: nowrap;
+        max-width: none;
+    }
+}
+
+/* Special effects for winning moments */
+.celebration-glow {
+    animation: celebration-glow 1s ease-in-out;
+}
+
+@keyframes celebration-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(253, 203, 110, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(253, 203, 110, 0.8), 0 0 60px rgba(253, 203, 110, 0.6);
+    }
+}
+
+/* Prevent content from overlapping with fixed elements */
+body {
+    overflow-x: hidden;
+}
+
+main {
+    min-height: calc(100vh - 100px);
+}
+
+/* Modal overlay fixes */
+#leaderboard-modal::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+}
+
+#leaderboard-modal > div {
+    position: relative;
+    z-index: 9999;
+}
