@@ -2,15 +2,12 @@ pip>=24.0
 setuptools>=68.0.0
 wheel
 
-# Web
 Flask==3.0.0
 Werkzeug==3.0.1
 flask-cors==4.0.0
 gunicorn==21.2.0
 python-dotenv==1.0.0
-sqlite-utils==3.35.2
 
-# AI / Vision
 torch
 torchvision
 torchaudio
@@ -19,9 +16,7 @@ opencv-python==4.8.1.78
 numpy==1.24.3
 Pillow==10.0.1
 
-# Security
 cryptography==41.0.7
 pyOpenSSL==23.3.0
 
-# Streamlit (if you’re using it)
 streamlit
