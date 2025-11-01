@@ -1,44 +1,26 @@
-# Object Quest - Production Requirements for Render Deployment
-# Real-Time YOLOv10 Object Detection Web Application with SQLite Leaderboard
+# Core build tools
+setuptools>=68.0.0
+wheel
+pip>=24.0
 
-# Core Flask Framework
+# Main frameworks
+streamlit
 Flask==3.0.0
 Werkzeug==3.0.1
+flask-cors==4.0.0
+gunicorn==21.2.0
+python-dotenv==1.0.0
 
-# Computer Vision and Machine Learning
-opencv-python==4.8.1.78
+# ML / CV dependencies
 torch
 torchvision
 torchaudio
 ultralytics==8.0.196
-
-
-
-# Numerical Computing
+opencv-python==4.8.1.78
 numpy==1.24.3
 Pillow==10.0.1
 
-# SSL/HTTPS Certificate Generation
+# Security / DB
 cryptography==41.0.7
 pyOpenSSL==23.3.0
-
-# Production WSGI Server for Render
-gunicorn==21.2.0
-
-# Environment Configuration
-python-dotenv==1.0.0
-
-# CORS Support (for frontend API calls)
-flask-cors==4.0.0
-
-# Database Optimization (if needed)
 sqlite-utils==3.35.2
-
-# Performance Monitoring (optional)
-# psutil==5.9.6
-
-# Development Dependencies (commented out for production)
-# pytest==7.4.3
-# pytest-cov==4.1.0
-# black==23.9.1
-# flake8==6.1.0
